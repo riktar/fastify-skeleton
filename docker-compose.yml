@@ -1,0 +1,29 @@
+version: "3"
+services:
+  fastify:
+    image: node:11.12.0
+    container_name: fastify
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    volumes:
+      - ./:/fastify
+#    command: bash -c "cd fastify && npm i && npm start"
+    command: bash -c "cd fastify && npm i && npm run dev"
+  mongo:
+    image: mongo
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      - "4445:27017"
+    volumes:
+      - /data/fastifydb:/data/db

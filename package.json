@@ -1,0 +1,35 @@
+{
+  "name": "fastify-skeleton",
+  "version": "1.0.0",
+  "description": "Skeleton for fastify",
+  "main": "server.js",
+  "dependencies": {
+    "@hapi/boom": "^9.1.0",
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "fastify": "^2.13.0",
+    "fastify-autoload": "^1.2.2",
+    "fastify-cors": "^3.0.2",
+    "fastify-jwt": "^1.2.1",
+    "fastify-plugin": "^1.6.1",
+    "fastify-static": "^2.6.0",
+    "fastify-swagger": "^2.5.0",
+    "mongoose": "^5.9.5",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "component-inspector": "^1.6.0",
+    "prettier": "1.19.1",
+    "tap": "^14.10.7",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "next build app/plugins/frontend",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js node.js"
+  },
+  "author": "Riccardo Tartaglia <tartaglia.riccardo@gmail.com>",
+  "license": "ISC"
+}
