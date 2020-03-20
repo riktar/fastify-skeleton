@@ -2,6 +2,7 @@
 
 const fp = require("fastify-plugin");
 const mongoose = require("mongoose");
+require("mongoose-schema-jsonschema")(mongoose);
 require("dotenv").config();
 
 module.exports = fp(function(fastify, opts, next) {

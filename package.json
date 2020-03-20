@@ -16,6 +16,7 @@
     "fastify-static": "^2.6.0",
     "fastify-swagger": "^2.5.0",
     "mongoose": "^5.9.5",
+    "mongoose-schema-jsonschema": "^1.2.1",
     "node-cron": "^2.0.3"
   },
   "devDependencies": {

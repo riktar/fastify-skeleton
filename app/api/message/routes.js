@@ -4,15 +4,7 @@
  */
 "use strict";
 
-const bodyPOSTMessage = {
-  type: "object",
-  required: ["from", "to"],
-  properties: {
-    from: { type: "string", minLength: 1 },
-    to: { type: "string", minLength: 1 },
-    message: { type: 'string'}
-  }
-};
+const messageSchema = require('../../models/Message').jsonSchema()
 
 const paramsObj = {
   type: "object",
@@ -24,6 +16,7 @@ const paramsObj = {
 
 module.exports = async (fastify, opts) => {
   const controller = fastify.MessageController;
+
 
   const routes = [
     {
@@ -47,7 +40,6 @@ module.exports = async (fastify, opts) => {
                 from: { type: 'string' }
               }
             }
-
           }
         }
       }
@@ -75,7 +67,7 @@ module.exports = async (fastify, opts) => {
         tags: ["Messages"],
         summary: "Insert a message",
         security: [],
-        body: bodyPOSTMessage
+        body: messageSchema
       }
     },
     {
@@ -89,7 +81,7 @@ module.exports = async (fastify, opts) => {
         params: paramsObj,
         summary: "Update a message",
         security: [],
-        body: bodyPOSTMessage
+        body: messageSchema
       }
     },
     {
